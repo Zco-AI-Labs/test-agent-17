@@ -1,0 +1,23 @@
+{
+  "widget_template_id": "car_comparison_card",
+  "layout": "comparison_grid",
+  "title": "Vehicle Comparison",
+  "columns": "{{vehicles}}",
+  "rows": [
+    { "label": "Starting Price", "field": "price_range" },
+    { "label": "City / Hwy MPG", "field": "mpg" },
+    { "label": "Horsepower", "field": "horsepower" },
+    { "label": "Seating", "field": "seating" },
+    { "label": "Cargo (cu ft)", "field": "cargo_volume" },
+    { "label": "NHTSA Safety", "field": "safety_rating" },
+    { "label": "Key Pros", "field": "pros" }
+  ],
+  "actions": [
+    {
+      "label": "Save to Hub Garage",
+      "action_id": "save_vehicle_to_hub",
+      "style": "primary",
+      "payload_fields": ["make", "model", "year"]
+    }
+  ]
+}

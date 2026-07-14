@@ -1,0 +1,28 @@
+{
+  "widget_template_id": "hub_garage_card",
+  "layout": "card_grid",
+  "title": "Hub Garage",
+  "subtitle": "Shared vehicles for this hub",
+  "items": "{{vehicles}}",
+  "item_fields": {
+    "primary": "year_make_model",
+    "secondary": "notes",
+    "meta": "added_by_name"
+  },
+  "actions": [
+    {
+      "label": "Remove",
+      "action_id": "delete_hub_vehicle",
+      "style": "danger",
+      "payload_fields": ["doc_id"],
+      "confirm": "Are you sure you want to remove this vehicle from the hub garage?"
+    }
+  ],
+  "header_actions": [
+    {
+      "label": "+ Add Vehicle",
+      "action_id": "open_add_vehicle_form",
+      "style": "primary"
+    }
+  ]
+}

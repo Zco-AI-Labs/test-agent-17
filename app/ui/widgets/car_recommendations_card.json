@@ -1,0 +1,21 @@
+{
+  "widget_template_id": "car_recommendations_card",
+  "layout": "list_tiles",
+  "title": "Top Picks for You",
+  "subtitle": "Based on your budget of ${{budget}} for {{use_case}}",
+  "items": "{{recommendations}}",
+  "item_fields": {
+    "primary": "model_name",
+    "secondary": "price_range",
+    "detail": "reason",
+    "badge": "mpg_label"
+  },
+  "actions": [
+    {
+      "label": "Compare This",
+      "action_id": "trigger_comparison",
+      "style": "secondary",
+      "payload_fields": ["model_name"]
+    }
+  ]
+}
