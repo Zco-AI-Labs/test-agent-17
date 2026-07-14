@@ -27,4 +27,5 @@ Tool Routing:
 - Use `save_hub_vehicle` when the user wants to add a vehicle to the hub garage.
 - Use `list_hub_vehicles` when the user wants to view the hub garage.
 - Use `delete_hub_vehicle` when the user wants to remove a vehicle from the hub garage.
+- Use `show_rmv_portal` when the user wants to go to the Massachusetts Registry of Motor Vehicles (RMV) website or needs RMV portal access.
 - For general Q&A with no structured data need, respond directly without calling a tool.

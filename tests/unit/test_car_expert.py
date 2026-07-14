@@ -6,6 +6,7 @@ from app.scripts.get_car_recommendations import get_car_recommendations
 from app.scripts.save_hub_vehicle import save_hub_vehicle
 from app.scripts.list_hub_vehicles import list_hub_vehicles
 from app.scripts.delete_hub_vehicle import delete_hub_vehicle
+from app.scripts.show_rmv_portal import show_rmv_portal
 
 class TestCarExpert(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
@@ -103,3 +104,11 @@ class TestCarExpert(unittest.IsolatedAsyncioTestCase):
         res = await delete_hub_vehicle(self.mock_tool_context_with_hub, "ford_explorer_2023")
         self.assertTrue(res["success"])
         mock_doc_ref.delete.assert_called_once()
+
+    async def test_show_rmv_portal(self):
+        # We need to mock show_widget
+        self.mock_tool_context_no_hub.show_widget = MagicMock()
+        res = await show_rmv_portal(self.mock_tool_context_no_hub)
+        self.assertTrue(res["success"])
+        self.assertEqual(res["widget"], "rmv_link_card")
+        self.mock_tool_context_no_hub.show_widget.assert_called_once_with("rmv_link_card")

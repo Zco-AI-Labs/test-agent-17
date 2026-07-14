@@ -1,0 +1,23 @@
+{
+  "widget_template_id": "rmv_link_card",
+  "layout": "list_tiles",
+  "title": "Massachusetts RMV Portal",
+  "subtitle": "Registry of Motor Vehicles Services",
+  "items": [
+    {
+      "title": "Go to Massachusetts RMV",
+      "url": "https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles"
+    }
+  ],
+  "item_fields": {
+    "primary": "title"
+  },
+  "actions": [
+    {
+      "label": "Open Portal",
+      "action_id": "open_rmv_url",
+      "style": "primary",
+      "payload_fields": ["url"]
+    }
+  ]
+}
