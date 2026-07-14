@@ -1,23 +1,45 @@
 {
-  "widget_template_id": "rmv_link_card",
-  "layout": "list_tiles",
-  "title": "Massachusetts RMV Portal",
-  "subtitle": "Registry of Motor Vehicles Services",
-  "items": [
-    {
-      "title": "Go to Massachusetts RMV",
-      "url": "https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles"
-    }
-  ],
-  "item_fields": {
-    "primary": "title"
+  "type": "container",
+  "props": {
+    "className": "flex flex-col gap-4 p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm"
   },
-  "actions": [
+  "children": [
     {
-      "label": "Open Portal",
-      "action_id": "open_rmv_url",
-      "style": "primary",
-      "payload_fields": ["url"]
+      "type": "text",
+      "props": {
+        "text": "Massachusetts RMV Portal",
+        "className": "text-lg font-bold text-slate-900 dark:text-white"
+      }
+    },
+    {
+      "type": "text",
+      "props": {
+        "text": "Registry of Motor Vehicles Services",
+        "className": "text-sm text-slate-500 dark:text-slate-400"
+      }
+    },
+    {
+      "type": "container",
+      "props": {
+        "className": "flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl"
+      },
+      "children": [
+        {
+          "type": "text",
+          "props": {
+            "text": "Go to Massachusetts RMV",
+            "className": "text-sm font-medium text-slate-700 dark:text-slate-300"
+          }
+        },
+        {
+          "type": "button",
+          "props": {
+            "label": "Open Portal",
+            "actionUrl": "https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles",
+            "className": "bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs px-3 py-2 rounded-lg transition-colors"
+          }
+        }
+      ]
     }
   ]
 }

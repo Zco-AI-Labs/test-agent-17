@@ -1,21 +1,36 @@
 {
-  "widget_template_id": "car_recommendations_card",
-  "layout": "list_tiles",
-  "title": "Top Picks for You",
-  "subtitle": "Based on your budget of ${{budget}} for {{use_case}}",
-  "items": "{{recommendations}}",
-  "item_fields": {
-    "primary": "model_name",
-    "secondary": "price_range",
-    "detail": "reason",
-    "badge": "mpg_label"
+  "type": "container",
+  "props": {
+    "className": "flex flex-col gap-4 p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm"
   },
-  "actions": [
+  "children": [
     {
-      "label": "Compare This",
-      "action_id": "trigger_comparison",
-      "style": "secondary",
-      "payload_fields": ["model_name"]
+      "type": "text",
+      "props": {
+        "text": "Top Picks for You",
+        "className": "text-lg font-bold text-slate-900 dark:text-white"
+      }
+    },
+    {
+      "type": "text",
+      "props": {
+        "text": "Based on your budget of ${{budget}} for {{use_case}}",
+        "className": "text-sm text-slate-500 dark:text-slate-400"
+      }
+    },
+    {
+      "type": "table",
+      "props": {
+        "paginated": true,
+        "pageSize": 5,
+        "columns": [
+          { "key": "model_name", "name": "Model", "width": "25%" },
+          { "key": "price_range", "name": "Price", "width": "20%" },
+          { "key": "mpg_label", "name": "MPG", "width": "15%" },
+          { "key": "reason", "name": "Recommendation Reason", "width": "40%" }
+        ],
+        "rows": "{{recommendations}}"
+      }
     }
   ]
 }
