@@ -32,3 +32,7 @@
 
 ## 3. Package File Encapsulation
 * All execution routes, prompts, and tool handlers belong strictly within the agent's package folder (e.g. `agents/temp_agent/`). Avoid placing business logic at the root level of the workspace.
+
+## 4. Visual Widget Execution
+* **Explicit show_widget Call:** To display a widget card on the companion UI when a tool executes, the tool **must explicitly call** `tool_context.show_widget(widget_template_id, data)`.
+* **Do Not Rely on Dict Returns:** Simply returning `{"widget": "widget_name"}` or similar keys in the tool's output dictionary **will not** trigger widget rendering. The backend runtime requires the `show_widget` method call to append the visual action payload to the active session context's execution queue.
